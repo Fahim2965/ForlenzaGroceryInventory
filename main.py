@@ -4,7 +4,7 @@ inventory = {}
 # Function to add items to the inventory.
 def add_item():
     name = input("Enter the item name: ")
-    quantity = int(input("Enter the quantity: ")
+    quantity = int(input("Enter the quantity: "))
     
     # Check if the item is already in the inventory and update its quantity.
     if name in inventory:
@@ -53,18 +53,23 @@ while True:
     
     choice = input("Enter your choice: ")
     
+   
     # Menu-driven program to perform various actions based on user input.
-    if choice == "1":
-        add_item()
-    elif choice == "2":
-        remove_item()
-    elif choice == "3":
-        view_inventory()
-    elif choice == "4":
-        search_item()
-    elif choice == "5":
-        print("Exiting the program.")
-        break
-    else:
+    try:
+        if choice == "1":
+            add_item()
+        elif choice == "2":
+            remove_item()
+        elif choice == "3":
+            view_inventory()
+        elif choice == "4":
+            search_item()
+        elif choice == "5":
+            print("Exiting the program.")
+            break
+        else:
         # Handle invalid input from the user.
-        print("Invalid choice. Please try again.")
+            print("Invalid choice. Please try again.")
+    except ValueError:
+        print("Please inter a int")
+
